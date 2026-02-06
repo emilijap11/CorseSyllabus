@@ -1,1 +1,1 @@
-# CorseSyllabus
+Kreirala sam web aplikaciju za vodjenje kartona predmeta – course syllabus. Sama web aplikacija omogucava pregled, dodavanje,pretragu, izmenu I brisanje predmeta kao I dodavanje ects bodova, opisa, ishoda I obaveza (predispitnih I ispitnih) a I dodavanje I brisanje profesora, kao I prikazivanje po profesoru (koji predmet/predmete predaje). Sto se tice funkcionalnosti imamo pregled liste i detalje predmeta, kreiranje I izmenu, dodavanje I brisanje. Tehnologije koje su koriscene su Java, Maven, Spring Boot I HTML, CSS, JavaScript za frontend.
