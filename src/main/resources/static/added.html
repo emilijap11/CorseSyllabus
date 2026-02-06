@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Added</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2 class="success">Success: Course added.</h2> 
+
+<div class="card">
+    <p><b>Name:</b> <span id="name"></span></p>
+    <p><b>ECTS:</b> <span id="ects"></span></p>
+    <p><b>Description:</b> <span id="description"></span></p>
+</div>
+
+<br>
+
+<button onclick="goBack()">Back</button>
+<button onclick="editCourse()">Edit</button>
+
+<script>
+
+    const saved = JSON.parse(localStorage.getItem("addedCourse"));
+    const course = saved?.course || saved || {};
+
+    document.getElementById("name").innerText = course.name || "";
+    document.getElementById("ects").innerText = course.ects || "";
+    document.getElementById("description").innerText = course.description || "";
+
+    function goBack(){
+        window.location.href="index.html";
+    }
+
+    function editCourse(){
+        localStorage.setItem("editCourse", JSON.stringify(saved || course));
+        window.location.href="edit_course.html";
+    }
+
+</script>
+
+</body>
+</html>

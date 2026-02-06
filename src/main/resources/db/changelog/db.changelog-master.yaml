@@ -1,0 +1,18 @@
+
+databaseChangeLog:
+  - changeSet:
+      id: 001-init
+      author: codex
+      sqlFile:
+        path: db/changelog/001-init.sql
+        relativeToChangelogFile: false
+        splitStatements: true
+        endDelimiter: ;
+  - changeSet:
+      id: 002-seed
+      author: codex
+      sqlFile:
+        path: db/changelog/002-seed.sql
+        relativeToChangelogFile: false
+        splitStatements: true
+        endDelimiter: ;

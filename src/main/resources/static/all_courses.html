@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>All Courses</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>All Courses</h1>
+
+<div class="button-container">
+    <button onclick="location.href='index.html'">Back</button>
+</div>
+
+<table id="courses-table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>ECTS</th> 
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script>
+    async function loadCourses() {
+        const res = await fetch("/api/courses");
+        const data = await res.json();
+
+        const tbody = document.querySelector("#courses-table tbody");
+        tbody.innerHTML = "";
+
+        data.forEach(c => {
+            const tr = document.createElement("tr");
+
+            tr.innerHTML = `
+                <td>${c.id}</td>
+                <td>${c.name}</td>
+                <td>${c.ects ?? "-"}</td>
+
+            `;
+
+            tr.onclick = () => {
+                window.location.href = "course_detail.html?id=" + c.id;
+            };
+            tbody.appendChild(tr);
+        });
+    }
+
+    loadCourses();
+</script>
+
+</body>
+</html>
